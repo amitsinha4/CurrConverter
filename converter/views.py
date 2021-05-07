@@ -3,12 +3,18 @@ Views Module of converter
 """
 from django.views.generic import TemplateView, View
 from forex_python.converter import CurrencyRates
+from converter.models import CurrencyList
 from django.http import JsonResponse
 
 
 class HomePage(TemplateView):
     """ Home Page """
     template_name = 'home.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['currency_list'] = CurrencyList.objects.filter(is_active=True)
+        return context
 
 
 class ConvertView(View):

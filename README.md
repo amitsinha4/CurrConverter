@@ -43,15 +43,17 @@ List of supported currency
 
 ---
 
-> Clone the reporsitory then make a virtual env (this project has been tested in python 3.6 onwards)
+> Clone the reporsitory then make a virtual env (this project has been tested in python 3.9 onwards)
 
 ```
 # After activating your virtualenv run following commands
 
 pip install -r req.txt
 
-# To run the application
+# To update the database with supported currency
+python manage.py seed
 
+# To run the application
 python manage.py runserver [host:port] # Host and port are optional
 
 ```

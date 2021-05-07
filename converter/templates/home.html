@@ -1,6 +1,5 @@
 {% load static %}
 <!DOCTYPE html>
-
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -123,7 +122,11 @@
                               name="currency"
                               class="form-control"
                             >
-                              {% include 'options.html'%}
+                              {% for item in currency_list %}
+                              <option value="{{item.currency_code}}">
+                                {{item}}
+                              </option>
+                              {% endfor %}
                             </select>
                           </div>
                         </div>
@@ -149,7 +152,11 @@
                               name="currency"
                               class="form-control"
                             >
-                              {% include 'options.html'%}
+                              {% for item in currency_list %}
+                              <option value="{{item.currency_code}}">
+                                {{item}}
+                              </option>
+                              {% endfor %}
                             </select>
                           </div>
                         </div>
@@ -194,7 +201,7 @@
         <!-- To the right -->
         <div class="float-right d-none d-sm-inline">Coded by Amit Sinha</div>
         <!-- Default to the left -->
-        <strong>Copyright &copy; {{ now }}</strong>
+        <strong>Copyright &copy; {% now 'Y' %}</strong>
       </footer>
     </div>
     <!-- ./wrapper -->

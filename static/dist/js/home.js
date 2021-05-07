@@ -21,7 +21,7 @@ $(document).ready(function () {
 		};
 
 		$.get(url, getData, function (data, status) {
-			$("#error").html('');
+		$("#error").html('');
 		if (status == "success") {
 				$("#to").val(data["converted_value"]);
 				$("#error").html(data['msg']);
