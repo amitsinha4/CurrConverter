@@ -2,6 +2,8 @@
 
 # Currency Converter
 
+[![Build Status](https://travis-ci.com/amitsinha4/CurrConverter.svg?branch=master)](https://travis-ci.com/amitsinha4/CurrConverter)
+
 A small programme to convert currency.
 
 List of supported currency
