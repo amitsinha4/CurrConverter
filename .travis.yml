@@ -1,0 +1,9 @@
+language: python
+python:
+  - "3.9"
+branch:
+  - master
+install:
+  - pip install -r req.txt
+script:
+  - python manage.py test
