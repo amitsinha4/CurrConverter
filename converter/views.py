@@ -26,7 +26,7 @@ class TestPage(View):
         """
         Get request
         """
-        return JsonResponse({"msg": "Success"})
+        return JsonResponse({"status": "Success"})
 
 
 class ConvertView(View):
