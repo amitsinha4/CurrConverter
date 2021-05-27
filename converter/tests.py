@@ -1,6 +1,7 @@
 """
 Unit Testing Module
 """
+from django.http import response
 from django.test import TestCase
 from django.test import Client
 from forex_python.converter import CurrencyRates
@@ -56,3 +57,10 @@ class HomePageTest(TestCase):
             "msg": "Either supplied value is not a valid currency or the field is empty"
         }
         self.assertDictEqual(res_json, expected_json)
+
+    def test_test_page(self):
+        res = self.__client.get('/test/')
+        output_dict = res.json()
+        expected_output = {'status': 'Success'}
+        self.assertEqual(res.status_code, 200)
+        self.assertDictEqual(output_dict, expected_output)

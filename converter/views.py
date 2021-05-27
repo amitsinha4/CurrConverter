@@ -17,6 +17,18 @@ class HomePage(TemplateView):
         return context
 
 
+class TestPage(View):
+    """
+    Test Page
+    """
+
+    def get(self, request):
+        """
+        Get request
+        """
+        return JsonResponse({"msg": "Success"})
+
+
 class ConvertView(View):
     """ Converting currency view """
     __curr = CurrencyRates()
